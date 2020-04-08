@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 
 export const LinksList = ({ links }) => {
   if (!links.length) {
-    return <p className="center">Посилання відсутні</p>
+    return <p className="center links-list">Посилання відсутні<br/>
+    Щоб додати посилання, натисніть вище <b>Створити</b></p>
   }
 
   return (

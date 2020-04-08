@@ -26,6 +26,8 @@ export const CreatePage = () => {
 
   return (
     <div className="row">
+      <h1 className="center">Ласкаво просимо</h1>
+      <p className="center">Щоб почати користувати <b>Links App</b> введіть нижче ваше посилання.</p>
       <div className="col s8 offset-s2" style={{paddingTop: '2rem'}}>
         <div className="input-field">
           <input

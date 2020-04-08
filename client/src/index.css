@@ -18,3 +18,21 @@ input.yellow-input:focus {
   border-bottom: 1px solid #ffcdd2!important;
   box-shadow: 0 1px 0 0 #ffcdd2!important;
 }
+
+.fa-list-alt {
+  margin-right: 5px;
+}
+
+.fa-plus-circle {
+  margin-right: 5px;
+}
+
+.fa-door-open {
+  margin-right: 5px;
+}
+
+.links-list {
+  margin-top: 100px;
+  font-size: 25px;
+
+}

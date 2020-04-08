@@ -81,7 +81,7 @@ router.post('/login',
             res.json({ token, userId: user.id });
 
         } catch (e) {
-            res.status(500).json({ message: 'Щоь пішло не так, спробуйте знову' })
+            res.status(500).json({ message: 'Щось пішло не так, спробуйте знову' })
         }
     });
 
