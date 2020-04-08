@@ -1,11 +1,24 @@
 const {Router} = require('express');
 const bcrypt = require('bcryptjs');
+const {check, validationResult} = require('express-validator');
 const User = require('../models/User');
 const router = Router();
 
 // /api/auth/register
-router.post('/register', async (req, res) => {
+router.post('/register',
+    [check('email', 'Некоректна електронна пошта').isEmail(),
+     check('password', 'Мінімальна довжина паролю 6 символів').isLength({ min: 6 })
+    ], async (req, res) => {
     try {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                errors: errors.array(),
+                message: 'Некоректні дані при реєстрації'
+            })
+        }
+
         const { email, password } = req.body;
         const candidate = await User.findOne({ email });
 
