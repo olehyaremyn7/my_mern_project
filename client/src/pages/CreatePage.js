@@ -19,28 +19,30 @@ export const CreatePage = () => {
         const data = await request('/api/link/generate', 'POST', {from: link}, {
           Authorization: `Bearer ${auth.token}`
         });
+
         history.push(`/detail/${data.link._id}`)
+
       } catch (e) {}
     }
   };
 
   return (
-    <div className="row">
-      <h1 className="center">Ласкаво просимо</h1>
-      <p className="center">Щоб почати користувати <b>Links App</b> введіть нижче ваше посилання.</p>
-      <div className="col s8 offset-s2" style={{paddingTop: '2rem'}}>
-        <div className="input-field">
-          <input
-            placeholder="Введіть посилання"
-            id="link"
-            type="text"
-            value={link}
-            onChange={e => setLink(e.target.value)}
-            onKeyPress={pressHandler}
-          />
-          <label htmlFor="link">Введіть посилання</label>
+      <div className="row">
+        <h1 className="center">Ласкаво просимо</h1>
+        <p className="center">Щоб почати користувати <b>Links App</b> введіть нижче ваше посилання.</p>
+        <div className="col s8 offset-s2" style={{paddingTop: '2rem'}}>
+          <div className="input-field">
+            <input
+                placeholder="Ваше посилання"
+                id="link"
+                type="text"
+                value={link}
+                onChange={e => setLink(e.target.value)}
+                onKeyPress={pressHandler}
+            />
+            <label htmlFor="link">Введіть ваше посилання</label>
+          </div>
         </div>
       </div>
-    </div>
   )
 };

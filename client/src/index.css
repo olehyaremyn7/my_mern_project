@@ -2,21 +2,22 @@
 
 
 input.yellow-input {
-  border-bottom: 1px solid #fff!important;
-  box-shadow: 0 1px 0 0 #fff!important;
+  border-bottom: 1px solid #000000!important;
+  box-shadow: 0 0 0 0 #000000!important;
+  padding-top: 20px;
 }
 
 input.yellow-input + label {
-  color: #ffffff!important;
+  color: #000000!important;
 }
 
 input.yellow-input:focus + label {
-  color: #ffcdd2!important;
+  color: #000000!important;
 }
 
 input.yellow-input:focus {
-  border-bottom: 1px solid #ffcdd2!important;
-  box-shadow: 0 1px 0 0 #ffcdd2!important;
+  border-bottom: 1px solid #ffffff!important;
+  box-shadow: 0 1px 0 0 #ffffff!important;
 }
 
 .fa-list-alt {
@@ -34,5 +35,31 @@ input.yellow-input:focus {
 .links-list {
   margin-top: 100px;
   font-size: 25px;
+}
 
+label.auth-page-text {
+  font-size: 17px;
+  font-weight: lighter;
+}
+
+hr.hr-auth {
+  border-bottom: 1px solid #000000!important;
+  box-shadow: 0 0 0 0 #000000!important;
+  margin-bottom: 30px;
+}
+
+hr.hr-auth-bottom {
+  border-bottom: 1px solid #000000!important;
+  box-shadow: 0 0 0 0 #000000!important;
+  margin-top: 30px;
+}
+
+h1.h-auth {
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+p.bottom-text {
+  text-align: center;
+  font-weight: lighter;
 }

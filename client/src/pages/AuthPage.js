@@ -13,7 +13,7 @@ export const AuthPage = () => {
 
   useEffect(() => {
     message(error);
-    clearError();
+    clearError()
   }, [error, message, clearError]);
 
   useEffect(() => {
@@ -39,61 +39,65 @@ export const AuthPage = () => {
   };
 
   return (
-    <div className="row">
-      <div className="col s6 offset-s3">
-        <h1 className="center">Links app</h1>
-        <div className="card red lighten-1">
-          <div className="card-content white-text">
-            <span className="card-title">Авторизація</span>
-            <div>
+      <div className="row">
+        <div className="col s6 offset-s3">
+          <h1 className="center h-auth">Links app</h1>
+          <hr className="hr-auth"/>
+          <div className="card red accent-2">
+            <div className="card-content dark-text">
+              <span className="card-title">Авторизація</span>
+              <div>
 
-              <div className="input-field">
-                <input
-                  placeholder="Введіть електронну пошту"
-                  id="email"
-                  type="text"
-                  name="email"
-                  className="yellow-input"
-                  value={form.email}
-                  onChange={changeHandler}
-                />
-                <label htmlFor="email">Електронна пошта</label>
+                <div className="input-field">
+                  <input
+                      placeholder="Введіть електронну пошту"
+                      id="email"
+                      type="text"
+                      name="email"
+                      className="yellow-input"
+                      value={form.email}
+                      onChange={changeHandler}
+                  />
+                  <label className="auth-page-text" htmlFor="email">Електронна пошта</label>
+                </div>
+
+                <div className="input-field">
+                  <input
+                      placeholder="Введіть пароль"
+                      id="password"
+                      type="password"
+                      name="password"
+                      className="yellow-input"
+                      value={form.password}
+                      onChange={changeHandler}
+                  />
+                  <label className="auth-page-text" htmlFor="email">Пароль</label>
+                </div>
+
               </div>
-
-              <div className="input-field">
-                <input
-                  placeholder="Введіть пароль"
-                  id="password"
-                  type="password"
-                  name="password"
-                  className="yellow-input"
-                  value={form.password}
-                  onChange={changeHandler}
-                />
-                <label htmlFor="email">Пароль</label>
-              </div>
-
+            </div>
+            <div className="card-action">
+              <button
+                  className="btn deep-orange lighten-2"
+                  style={{marginRight: 10}}
+                  disabled={loading}
+                  onClick={loginHandler}
+              >
+                Ввійти
+              </button>
+              <button
+                  className="btn grey lighten-1 black-text"
+                  onClick={registerHandler}
+                  disabled={loading}
+              >
+                Реєстрація
+              </button>
             </div>
           </div>
-          <div className="card-action">
-            <button
-              className="btn blue lighten-1"
-              style={{marginRight: 10}}
-              disabled={loading}
-              onClick={loginHandler}
-            >
-              Ввійти
-            </button>
-            <button
-              className="btn teal accent-2 black-text"
-              onClick={registerHandler}
-              disabled={loading}
-            >
-              Реєстрація
-            </button>
-          </div>
+          <hr className="hr-auth-bottom"/>
+          <p className="bottom-text">© 2020 Copyright Text</p>
         </div>
       </div>
-    </div>
+
   )
 };

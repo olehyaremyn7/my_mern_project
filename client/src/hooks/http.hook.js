@@ -20,8 +20,8 @@ export const useHttp = () => {
       }
 
       setLoading(false);
-
       return data
+
     } catch (e) {
       setLoading(false);
       setError(e.message);
@@ -32,4 +32,5 @@ export const useHttp = () => {
   const clearError = useCallback(() => setError(null), []);
 
   return { loading, request, error, clearError }
+
 };

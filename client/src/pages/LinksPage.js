@@ -14,7 +14,9 @@ export const LinksPage = () => {
       const fetched = await request('/api/link', 'GET', null, {
         Authorization: `Bearer ${token}`
       });
+
       setLinks(fetched)
+
     } catch (e) {}
   }, [token, request]);
 
@@ -27,8 +29,8 @@ export const LinksPage = () => {
   }
 
   return (
-    <>
-      {!loading && <LinksList links={links} />}
-    </>
+      <>
+        {!loading && <LinksList links={links} />}
+      </>
   )
 };

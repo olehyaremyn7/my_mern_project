@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
     const token = req.headers.authorization.split(' ')[1];
 
     if (!token) {
-      res.status(401).json({ message: 'Ви неавторизовані' })
+      return res.status(401).json({ message: 'Ви неавторизовані' })
     }
 
     const decoded = jwt.verify(token, config.get('jwtSecret'));

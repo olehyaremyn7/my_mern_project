@@ -16,7 +16,9 @@ export const DetailPage = () => {
       const fetched = await request(`/api/link/${linkId}`, 'GET', null, {
         Authorization: `Bearer ${token}`
       });
+
       setLink(fetched)
+
     } catch (e) {}
   }, [token, linkId, request]);
 
@@ -29,8 +31,8 @@ export const DetailPage = () => {
   }
 
   return (
-    <>
-      { !loading && link && <LinkCard link={link} /> }
-    </>
+      <>
+        { !loading && link && <LinkCard link={link} /> }
+      </>
   )
 };
